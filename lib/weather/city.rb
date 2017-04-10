@@ -26,10 +26,10 @@ module Weather
       @id = json['city']['id']
       coordinate = json['city']['coord']
       if coordinate
-        @longitude = coordinate["lon"]
-        @latitude = coordinate["lat"]
+        @longitude = coordinate['lon']
+        @latitude = coordinate['lat']
       end
-      conditions = Weather::Condition.to_object(json['list'])
+      @conditions = Weather::Condition.to_object(json['list'])
     end
 
     def to_s
