@@ -1,8 +1,6 @@
 # Weather
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/weather`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Gem to gather data from [openweathermap.org](http://openweathermap.org).
 
 ## Installation
 
@@ -14,15 +12,30 @@ gem 'weather'
 
 And then execute:
 
-    $ bundle
+    $ bundle install 
 
 Or install it yourself as:
 
     $ gem install weather
 
+### Using with Rails
+ 
+ $ rails generate weather:install
+
 ## Usage
 
-TODO: Write usage instructions here
+### Non-Rails env
+```ruby
+  city = Weather::City.new("Tallinn")
+  city.forecast("your_api_key")
+```
+
+### Using Rails
+```ruby
+  city = Weather::City.new("Tallinn")
+  city.forecast
+```
+
 
 ## Development
 
